@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "https://amazing-karita-moiz-2205710f.koyeb.app";
+const API_BASE_URL = "https://chemical-michaelina-moiz-aa3e0a3e.koyeb.app";
 
 export const loginUser = async (formData) => {
   return await axios.post(`${API_BASE_URL}/api/v1/login`, formData, {
