@@ -1,11 +1,16 @@
 import axios from "axios";
 
-const API = axios.create({
-  baseURL: "https://amazing-karita-moiz-2205710f.koyeb.app/api/v1",
-  withCredentials: true,
-});
+const API_BASE_URL = "https://amazing-karita-moiz-2205710f.koyeb.app";
 
-export const registerUser = (data) => API.post("/register", data);
-export const loginUser = (data) => API.post("/login", data);
-export const logoutUser = () => API.post("/logout");
-export const fetchUserData = () => API.get("/userdata");
+export const loginUser = async (formData) => {
+  return await axios.post(`${API_BASE_URL}/api/v1/login`, formData, {
+    withCredentials: true, // Allow cookies
+  });
+};
+
+export const registerUser = async (formData) => {
+  return await axios.post(`${API_BASE_URL}/api/v1/register`, formData, {
+    withCredentials: true, // Allow cookies
+  });
+};
+
